@@ -1,14 +1,24 @@
 .PHONY: all
+## Runs the unit tests on your machine.
 all:
 	npm test
 
 .PHONY: start
+## Starts the React application.
 start:
 	npm start
 
-.PHONY: clean
-clean::
-	$(RM) node_modules/
+.PHONY: dist-clean
+## Removes all generated and downloaded files.
+dist-clean::
+	$(RM) -r node_modules/
+
+-include ../.makehelp/include/makehelp/Help.mk
+
+ifeq "help" "$(filter help,$(MAKECMDGOALS))"
+../.makehelp/include/makehelp/Help.mk:
+	git clone --depth=1 https://github.com/christianhujer/makehelp.git ../.makehelp
+endif
 
 -include User.mkk
 -include ../User.mkk
