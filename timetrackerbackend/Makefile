@@ -1,6 +1,6 @@
 .PHONY: all
 all:
-	docker-compose up
+	./gradlew test
 
 -include User.mkk
 -include ../User.mkk
