@@ -1,0 +1,15 @@
+version: '3'
+services:
+  database:
+    image: 'mongo'
+    container_name: 'timetracker-database'
+    environment:
+      - MONGO_INITDB_DATABASE=timetracker
+      - MONGO_INITDB_ROOT_USERNAME=${TIMETRACKER_DB_USERNAME_ROOT}
+      - MONGO_INITDB_ROOT_PASSWORD=${TIMETRACKER_DB_PASSWORD_ROOT}
+    volumes:
+      #- ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume-3.6:/data-db
+    ports:
+      - '27017-27019:27017-27019'
+      
