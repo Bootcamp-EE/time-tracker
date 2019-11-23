@@ -48,3 +48,7 @@ hs_err_pid*
 # Terrafrom var files
 *.tfvars
 workspace.xml
+
+# Makehelp https://github.com/christianhujer/makehelp
+.makehelp
+.help.mk
