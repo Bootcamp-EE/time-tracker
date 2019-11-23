@@ -8,4 +8,3 @@ This is a time tracking application being built as a part of the bootcamp @ Equa
 - In `docker-compose.yml`
 change the path of `/some/valid/path/to/jenkins` to any local folder.
 - run command `docker-compose up` from `ci/`
-- Git push from Mohan
