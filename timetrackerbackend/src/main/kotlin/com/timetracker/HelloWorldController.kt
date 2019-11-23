@@ -9,6 +9,6 @@ class HelloWorldController {
 
     @GetMapping("/")
     fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String) =
-            "Hello, World"
+            "Hello, World!"
 
 }
