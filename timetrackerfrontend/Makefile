@@ -1,7 +1,11 @@
 .PHONY: all
 ## Runs the unit tests on your machine.
-all:
-	npm test
+all: test
+
+.PHONY: test
+## Runs the unit tests on your machine.
+test:
+	CI=true npm test
 
 .PHONY: start
 ## Starts the React application.
