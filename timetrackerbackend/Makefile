@@ -1,12 +1,16 @@
 .PHONY: all
-## Runs the tests.
-all:
+## Runs unit the tests.
+all:test
+
+.PHONY: test
+## Runs the unit tests.
+start:
 	./gradlew test
 
 .PHONY: start
 ## Starts the backend.
 start:
-	echo TODO
+	./gradlew bootRun
 
 .PHONY: clean
 ## Removes generated files.
