@@ -1,8 +1,8 @@
 version: '3'
 services:
   jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
+    build: .
+    image: "jenkins:time-tracker"
     volumes:
       - ${JENKINS_PATH}:/var/jenkins_home
     environment:
