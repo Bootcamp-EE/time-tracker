@@ -4,8 +4,8 @@ services:
     image: jenkins/jenkins:lts
     container_name: jenkins
     volumes:
-      - /some/valid/path/to/jenkins:/var/jenkins_home
+      - ${JENKINS_PATH}:/var/jenkins_home
     environment:
-      JENKINS_HOST_HOME: "/some/valid/path/to/jenkins"
+      JENKINS_HOST_HOME: ${JENKINS_PATH}
     ports:
       - "49001:8080"
