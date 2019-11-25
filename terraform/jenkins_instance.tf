@@ -20,14 +20,14 @@ resource "aws_instance" "ci-server" {
   }
 
   provisioner "file" {
-    source = "../ci/script"
-    destination = "/tmp/script"
+    source = "../ci"
+    destination = "/tmp/ci"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/script/setup-docker.sh",
-      "sudo /tmp/script/setup-docker.sh"
+      "chmod +x /tmp/ci/script/setup-docker.sh",
+      "sudo /tmp/ci/script/setup-docker.sh"
     ]
   }
 

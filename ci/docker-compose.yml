@@ -3,6 +3,8 @@ services:
   jenkins:
     build: .
     image: "jenkins:time-tracker"
+    volumes:
+      - ${JENKINS_PATH}:/var/jenkins_home
     environment:
       JENKINS_HOST_HOME: ${JENKINS_PATH}
     ports:
