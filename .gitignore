@@ -52,3 +52,4 @@ workspace.xml
 # Makehelp https://github.com/christianhujer/makehelp
 .makehelp
 .help.mk
+**/jenkins_key
