@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 
@@ -8,7 +7,7 @@ class App extends React.Component {
         greeting: ""
     }
     getGreeting = async () => {
-        let res = await axios.get("http://localhost:8080/");
+        const res = await axios.get("http://localhost:8080/");
         this.setState({ greeting: res.data });
     };
     componentDidMount(){
