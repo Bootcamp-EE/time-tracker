@@ -10,11 +10,13 @@ install:
 .PHONY: test
 ## Runs the unit tests on your machine.
 test:install
+test:
 	CI=true npm test
 
 .PHONY: start
 ## Starts the React application.
 start:install
+start:
 	npm start
 
 .PHONY: dist-clean
