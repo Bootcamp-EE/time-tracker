@@ -11,5 +11,9 @@ curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compos
 chmod +x /usr/local/bin/docker-compose
 cd /tmp && mkdir jenkins
 export jenkins_path="/tmp/jenkins"
-cd /script
-docker-compose up
+pwd
+cd ci
+pwd
+sudo chmod +rwx docker-install.sh
+sh docker-install.sh
+sudo docker-compose up -d
