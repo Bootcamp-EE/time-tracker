@@ -4,7 +4,7 @@ all:test
 
 .PHONY: test
 ## Runs the unit tests.
-start:
+test:
 	./gradlew test
 
 .PHONY: start
