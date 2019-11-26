@@ -1,6 +1,6 @@
-package com.timetracker.repository
+package com.timetracker.helloworld
 
-import com.timetracker.models.Message
+import com.timetracker.helloworld.Message
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

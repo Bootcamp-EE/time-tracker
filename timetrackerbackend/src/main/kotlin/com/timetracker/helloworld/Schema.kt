@@ -1,4 +1,4 @@
-package com.timetracker.models
+package com.timetracker.helloworld
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document

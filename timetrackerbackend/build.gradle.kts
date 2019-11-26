@@ -23,6 +23,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	// https://mvnrepository.com/artifact/com.nhaarman/mockito-kotlin
+	testImplementation("com.nhaarman", "mockito-kotlin", "1.6.0")
 }
 
 tasks.withType<Test> {

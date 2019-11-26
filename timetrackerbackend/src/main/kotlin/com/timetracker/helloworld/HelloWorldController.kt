@@ -1,12 +1,11 @@
-package com.timetracker.controllers
+package com.timetracker.helloworld
 
-import com.timetracker.models.Message
-import com.timetracker.services.MessageService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+@CrossOrigin
 @RestController
 class HelloWorldController {
 
@@ -14,7 +13,7 @@ class HelloWorldController {
     lateinit var messageService: MessageService
 
     @GetMapping("/")
-    fun index():Message {
+    fun index(): Message {
         return messageService.getMessage()
     }
 }
