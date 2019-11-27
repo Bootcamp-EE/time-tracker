@@ -25,7 +25,7 @@ describe('<App />', () => {
     //given
     var impl=mockAxios.get.mockImplementation(() =>
       Promise.resolve({
-        data: greetingText
+        data: {"id":"hello","message":"Hello, World!"}
       })
     );
     //when

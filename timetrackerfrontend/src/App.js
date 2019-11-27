@@ -8,7 +8,7 @@ class App extends React.Component {
     }
     getGreeting = async () => {
         const res = await axios.get("http://localhost:8080/");
-        this.setState({ greeting: res.data });
+        this.setState({ greeting: res.data.message });
     };
     componentDidMount(){
         this.getGreeting()
