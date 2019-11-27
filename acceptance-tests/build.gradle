@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+configurations {
+    cucumberRuntime.extendsFrom testRuntime
+}
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'com.timetracker', 'src/test/java']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'org.seleniumhq.selenium:selenium-server:2.44.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.4.0'
+    compile 'org.testng:testng:6.1.1'
+    // https://mvnrepository.com/artifact/info.cukes/cucumber-testng
+    compile group: 'info.cukes', name: 'cucumber-testng', version: '1.2.5'
+    // https://mvnrepository.com/artifact/info.cukes/cucumber-java
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+
+}

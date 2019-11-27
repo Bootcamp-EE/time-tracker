@@ -9,7 +9,7 @@ class MessageService {
     lateinit var messageRepository: MessageRepository
 
     fun getMessage(): Message {
-        messageRepository.save(Message("hello", "Hello World"))
+        messageRepository.save(Message("hello", "Hello, world!"))
         return messageRepository.findAll().first()
     }
 }
