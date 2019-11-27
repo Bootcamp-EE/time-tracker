@@ -17,12 +17,6 @@ variable "PATH_TO_PRIVATE_KEY" {
 variable "PATH_TO_PUBLIC_KEY" {
   default = "timesheet_key.pub"
 }
-variable "JENKINS_PATH_TO_PUBLIC_KEY" {
-  default = "jenkins_key.pub"
-}
-variable "JENKINS_PATH_TO_PRIVATE_KEY" {
-  default = "jenkins_key"
-}
 variable "INSTANCE_USER" {
   default = "ubuntu"
 }
