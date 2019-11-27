@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y build-essential
 
 # Run nodejs groovy installation script
 
-COPY ./script/nodejs.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY ./nodejs.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # allows to skip Jenkins setup wizard
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false

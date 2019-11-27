@@ -53,3 +53,4 @@ workspace.xml
 .makehelp
 .help.mk
 **/jenkins_key
+**/timesheet_key
