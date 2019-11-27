@@ -31,6 +31,6 @@ ifeq "help" "$(filter help,$(MAKECMDGOALS))"
 	git clone --depth=1 https://github.com/christianhujer/makehelp.git ../.makehelp
 endif
 
--include User.mkk
--include ../User.mkk
+-include User.mk
+-include ../User.mk
 -include ~/User.mk
