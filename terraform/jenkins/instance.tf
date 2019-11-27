@@ -7,30 +7,11 @@ resource "aws_key_pair" "jenkins-key" {
 resource "aws_instance" "ci-server" {
   ami = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
+  availability_zone = var.AWS_AVAILABILITY_ZONE
   key_name = aws_key_pair.jenkins-key.key_name
   tags = {
     "Name" = "ci-server"
   }
-
-  connection {
-    host = self.public_ip
-    type = "ssh"
-    user = var.INSTANCE_USER
-    private_key = file(var.JENKINS_PATH_TO_PRIVATE_KEY)
-  }
-
-  provisioner "file" {
-    source = "../ci"
-    destination = "/tmp/ci"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/ci/setup-docker.sh",
-      "sudo /tmp/ci/setup-docker.sh"
-    ]
-  }
-
 }
 
 resource "aws_network_interface_sg_attachment" "jenkins_sg_attachment" {

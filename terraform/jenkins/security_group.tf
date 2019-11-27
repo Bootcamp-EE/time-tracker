@@ -11,8 +11,8 @@ resource "aws_security_group" "http_security_group" {
 
   ingress {
     # TLS (change to whatever ports you need)
-    from_port   = 80
-    to_port     = 80
+    from_port   = 49001
+    to_port     = 49001
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -25,6 +25,6 @@ resource "aws_security_group" "http_security_group" {
   }
 
   tags = {
-    Name = "allow_all"
+    Name = "allow_all_jenkins"
   }
 }
