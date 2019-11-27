@@ -54,4 +54,5 @@ User.mk
 .makehelp
 .help.mk
 **/jenkins_key
+/.idea/$PRODUCT_WORKSPACE_FILE$
 **/timesheet_key
