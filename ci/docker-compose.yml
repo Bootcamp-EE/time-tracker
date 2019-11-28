@@ -3,5 +3,7 @@ services:
   jenkins:
     build: .
     image: "jenkins:time-tracker"
+    volumes:
+      - /jenkins:/var/jenkins_home
     ports:
       - "49001:8080"

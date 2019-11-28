@@ -1,6 +1,14 @@
-resource "null_resource" "intall_jenkins" {
+resource "null_resource" "install_jenkins" {
+
+  depends_on = [
+    aws_eip_association.jenkins_static_ip_association
+  ]
+
+  triggers ={
+    instance_id=aws_instance.ci-server.id
+  }
   connection {
-    host = aws_instance.ci-server.public_ip
+    host = aws_eip.static_ip.public_ip
     type = "ssh"
     user = var.INSTANCE_USER
     private_key = file(var.JENKINS_PATH_TO_PRIVATE_KEY)
