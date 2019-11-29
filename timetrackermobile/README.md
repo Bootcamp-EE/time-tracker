@@ -1,16 +1,21 @@
-# timetrackermobile
+# Time tracker mobile
 
-A new Flutter project.
+## Setup for mobile (flutter) development
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Download flutter and perform steps (till update path) for installing flutter. Refer [here](https://flutter.dev/docs/get-started/install/macos)
+- Install android-sdk and dependent packages. 
+    1. Installing android-sdk (Requires java 1.8)
+        * `brew cask install android-sdk`
+    2. Set `ANDROID_SDK_ROOT` path
+    3. Create `repositories.cfg` file using  
+        `touch ~/.android/repositories.cfg`
+    4. Installing platform-tools and build-tools
+        * `sdkmanager --update`
+        * `sdkmanager "platform-tools" "platforms;android-29" "build-tools;29.0.3"`
+        * `sdkmanager --list`
+        * `sdkmanager "system-images;android-29;default;x86_64"`
+- Pointing flutter to android-sdk
+    * `flutter config --android-sdk <<path-to-your-android-sdk>>`
+- Accepting Android SDK licenses
+    * `flutter doctor --android-licenses`
+- Connect devices in usb-debugging mode enabled and then execute `flutter run`
