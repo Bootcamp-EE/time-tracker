@@ -1,7 +1,8 @@
 resource "null_resource" "install_jenkins" {
 
   depends_on = [
-    aws_eip_association.jenkins_static_ip_association
+    aws_eip_association.jenkins_static_ip_association,
+    aws_volume_attachment.jenkins_volume
   ]
 
   triggers ={
