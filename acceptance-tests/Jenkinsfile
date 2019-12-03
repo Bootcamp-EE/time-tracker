@@ -1,0 +1,17 @@
+pipeline {
+   agent any
+
+   triggers {
+           pollSCM "H/15 * * * *"
+       }
+
+    stages {
+        stage('Build and Test') {
+        steps {
+               dir("acceptance-tests"){
+               sh 'make'
+            }
+        }
+      }
+    }
+}
