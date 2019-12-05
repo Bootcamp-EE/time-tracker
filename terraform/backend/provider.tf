@@ -3,3 +3,10 @@ provider "aws" {
   secret_key = var.AWS_SECRET_KEY
   region = var.AWS_REGION
 }
+terraform {
+    backend "s3"{
+      bucket = "eebootcamptimesheetdev"
+      key = "devenv.tfstate"
+      region = "us-east-1"
+    }
+}

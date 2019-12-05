@@ -57,3 +57,5 @@ User.mk
 /.idea/$PRODUCT_WORKSPACE_FILE$
 **/timesheet_key
 .terraform
+*.tfstate
+*.tfstate.backup

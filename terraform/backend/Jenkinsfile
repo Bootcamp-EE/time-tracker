@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    triggers {
+        pollSCM "H/15 * * * *"
+    }
+
+    stages {
+
+        stage('Deploy backend infrastructure') {
+        steps {
+               dir("terraform/backend"){
+               sh 'make test'
+              }
+            }
+        }
+
+    }
+}
