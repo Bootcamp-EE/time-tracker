@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy backend infrastructure') {
         steps {
                dir("terraform/backend"){
-               sh 'make test'
+               sh 'make'
               }
             }
         }
