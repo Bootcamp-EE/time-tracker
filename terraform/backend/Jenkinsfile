@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        TF_VAR_TIMESHEET_PRIVATE_KEY = credentials ('timesheet_private_key')
+        TF_VAR_TIMESHEET_PRIVATE_KEY = credentials ('TIMESHEET_PRIVATE_KEY')
         TF_VAR_TIMESHEET_PUBLIC_KEY = credentials ('timesheet_public_key')
         TF_VAR_AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
         TF_VAR_AWS_SECRET_KEY = credentials ('AWS_SECRET_KEY')
