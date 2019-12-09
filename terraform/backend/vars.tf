@@ -17,8 +17,7 @@ variable "AWS_AVAILABILITY_ZONE" {
   default = "us-east-1a"
 }
 
-variable "PATH_TO_PRIVATE_KEY" {
-  default = "timesheet_key"
+variable "TIMESHEET_PRIVATE_KEY" {
 }
 variable "TIMESHEET_PUBLIC_KEY" {
 }

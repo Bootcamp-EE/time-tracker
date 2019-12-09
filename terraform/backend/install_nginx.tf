@@ -3,7 +3,7 @@ resource "null_resource" "install_nginx" {
     host = aws_eip.static_ip.public_ip
     type = "ssh"
     user = var.INSTANCE_USER
-    private_key = file(var.PATH_TO_PRIVATE_KEY)
+    private_key = var.TIMESHEET_PRIVATE_KEY
   }
 
   provisioner "file" {
