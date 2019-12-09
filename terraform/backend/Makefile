@@ -1,6 +1,7 @@
 export TF_LOG:=WARN
 .PHONY: deploy
 deploy:
+    echo ${TIMESHEET_KEY}
 	terraform init -input=false
 	terraform plan -input=false
 	terraform apply -auto-approve

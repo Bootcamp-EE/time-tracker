@@ -5,6 +5,10 @@ pipeline {
         pollSCM "H/15 * * * *"
     }
 
+    environment {
+        TIMESHEET_KEY = credentials ('timesheet_key')
+    }
+
     stages {
 
         stage('Deploy backend infrastructure') {
