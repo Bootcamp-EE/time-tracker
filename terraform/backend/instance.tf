@@ -9,7 +9,7 @@ resource "aws_instance" "backend-server" {
   key_name = aws_key_pair.timesheet-key.key_name
   subnet_id = "subnet-0a7874dd3894e19be"
   availability_zone = var.AWS_AVAILABILITY_ZONE
-  user_data = "${file("start-nginx.sh")}"
+  user_data = file("start-nginx.sh")
   tags = {
     "Name" = "timesheet-server"
   }
