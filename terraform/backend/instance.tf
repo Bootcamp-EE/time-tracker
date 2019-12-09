@@ -1,6 +1,6 @@
 resource "aws_key_pair" "timesheet-key" {
   key_name = "timesheet-key"
-  public_key = file(var.PATH_TO_PUBLIC_KEY)
+  public_key = var.TIMESHEET_PUBLIC_KEY
 }
 
 resource "aws_instance" "backend-server" {

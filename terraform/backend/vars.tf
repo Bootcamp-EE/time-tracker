@@ -20,8 +20,8 @@ variable "AWS_AVAILABILITY_ZONE" {
 variable "PATH_TO_PRIVATE_KEY" {
   default = "timesheet_key"
 }
-variable "PATH_TO_PUBLIC_KEY" {
-  default = "timesheet_key.pub"
+variable "TIMESHEET_PUBLIC_KEY" {
+  default = file("timesheet_key.pub")
 }
 variable "INSTANCE_USER" {
   default = "ubuntu"
