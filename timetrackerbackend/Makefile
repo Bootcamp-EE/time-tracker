@@ -17,6 +17,17 @@ start:
 clean::
 	./gradlew clean
 
+## build and creates jar
+.PHONY: build
+build::
+	./gradlew build
+
+## build docker image
+.PHONY: buildDockerImage
+buildDockerImage::
+	 docker build -t timesheet-backend:latest .
+
+
 -include ../.makehelp/include/makehelp/Help.mk
 
 ifeq "help" "$(filter help,$(MAKECMDGOALS))"
