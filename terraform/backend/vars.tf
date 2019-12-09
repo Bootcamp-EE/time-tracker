@@ -21,7 +21,6 @@ variable "PATH_TO_PRIVATE_KEY" {
   default = "timesheet_key"
 }
 variable "TIMESHEET_PUBLIC_KEY" {
-  default = file("timesheet_key.pub")
 }
 variable "INSTANCE_USER" {
   default = "ubuntu"
