@@ -20,7 +20,7 @@ pipeline {
       stage('Deploy'){
       steps{
            withAWS() {
-                     s3Upload(file:'build', bucket:"${params.s3-bucket}", path:'timetrackerfrontend/')
+                     s3Upload(file:'build', bucket:"${params['s3-bucket']}", path:'timetrackerfrontend/')
                    }
       }
       }
