@@ -4,6 +4,10 @@ pipeline {
    parameters {
         string(defaultValue: 'eebootcamp-timesheet-frontend-server',description: 's3-bucket-name to upload files', name: 's3-bucket')
     }
+     environment {
+            AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
+            AWS_SECRET_KEY = credentials ('AWS_SECRET_KEY')
+        }
     stages {
         stage('Build') {
         steps {
