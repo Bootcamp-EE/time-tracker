@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "frontend-s3-bucket" {
-  bucket = "eebottcamp-timesheet-frontend-server"
+  bucket = "eebootcamp-timesheet-frontend-server"
   region = var.AWS_REGION
   acl = "private"
   website {
