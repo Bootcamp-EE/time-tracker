@@ -1,13 +1,17 @@
 pipeline {
    agent any
-   tools {nodejs "nodejs"}
-   parameters {
-        string(defaultValue: 'eebootcamp-timesheet-frontend-server',description: 's3-bucket-name to upload files', name: 's3-bucket')
-    }
-     environment {
-            AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
-            AWS_SECRET_KEY = credentials ('AWS_SECRET_KEY')
-        }
+
+    environment {
+               AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
+               AWS_SECRET_KEY = credentials ('AWS_SECRET_KEY')
+           }
+
+     parameters {
+                   string(defaultValue: 'eebootcamp-timesheet-frontend-server',description: 's3-bucket-name to upload files', name: 's3-bucket')
+               }
+
+    tools {nodejs "nodejs"}
+
     stages {
         stage('Build') {
         steps {
@@ -20,7 +24,7 @@ pipeline {
       stage('Deploy'){
       steps{
            withAWS() {
-                     s3Upload(file:'timetrackerfrontend/build', bucket:"${params['s3-bucket']}", path:'timetrackerfrontend/')
+                     s3Upload(file:'timetrackerfrontend/build', bucket:"${params['s3-bucket']}")
                    }
       }
       }
