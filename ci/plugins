@@ -4,3 +4,4 @@ workflow-aggregator
 gradle
 nodejs
 release
+pipeline-aws
