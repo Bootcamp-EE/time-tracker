@@ -10,8 +10,10 @@ pipeline {
         stage('Build and Test') {
         steps {
                dir("timetrackerbackend"){
-               sh 'java -version'
-               sh 'make test'
+                env.JAVA_HOME="${tool 'JDK-11'}"
+                env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+                sh 'java -version'
+                sh 'make test'
               }
             }
         }
