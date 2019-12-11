@@ -17,8 +17,6 @@ variable "AWS_AVAILABILITY_ZONE" {
   default = "us-east-1a"
 }
 
-variable "TIMESHEET_PRIVATE_KEY" {
-}
 variable "TIMESHEET_PUBLIC_KEY" {
 }
 variable "INSTANCE_USER" {
