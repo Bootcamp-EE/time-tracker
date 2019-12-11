@@ -10,6 +10,7 @@ pipeline {
         stage('Build and Test') {
         steps {
                dir("timetrackerbackend"){
+               sh 'java -version'
                sh 'make test'
               }
             }
