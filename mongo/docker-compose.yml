@@ -11,5 +11,4 @@ services:
       #- ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
       - ./mongo-volume-3.6:/data-db
     ports:
-      - '27017-27019:27017-27019'
-      
+      - '27017:27017'
