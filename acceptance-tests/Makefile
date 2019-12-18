@@ -5,7 +5,7 @@ all:test
 .PHONY: test
 ## Runs the unit tests.
 test:
-	./gradlew cucumber
+	./gradlew test
 
 -include ../.makehelp/include/makehelp/Help.mk
 
