@@ -1,5 +1,6 @@
 package com.timetracker;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.testng.Assert;
 
 import java.util.Map;
 
+import static java.lang.Runtime.getRuntime;
 import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
 
@@ -28,10 +30,16 @@ public class StepDefs {
         );
     }
 
-    @Given("I open home page")
-    public void open_home_page() {
+    @Before
+    public void initWebDriver() {
+        if (driver != null) return;
         setProperty("webdriver.chrome.driver", getChromeDriver());
         driver = new ChromeDriver();
+        getRuntime().addShutdownHook(new Thread(driver::quit));
+    }
+
+    @Given("I open home page")
+    public void open_home_page() {
         driver.get("http://localhost:3000");
     }
 
