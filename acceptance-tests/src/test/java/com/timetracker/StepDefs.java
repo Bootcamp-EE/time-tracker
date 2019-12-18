@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Map;
 
@@ -33,8 +34,12 @@ public class StepDefs {
     @Before
     public void initWebDriver() {
         if (driver != null) return;
+
         setProperty("webdriver.chrome.driver", getChromeDriver());
-        driver = new ChromeDriver();
+
+        final ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         getRuntime().addShutdownHook(new Thread(driver::quit));
     }
 
