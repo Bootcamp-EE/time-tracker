@@ -38,13 +38,13 @@ public class StepDefs {
         getRuntime().addShutdownHook(new Thread(driver::quit));
     }
 
-    @Given("I open home page")
+    @Given("I open the home page")
     public void open_home_page() {
         driver.get("http://localhost:3000");
     }
 
-    @Then("I should see \"([^\"]*)\" message")
-    public void iShouldSeeMessage(String message) {
+    @Then("I MUST see a message \"([^\"]*)\"")
+    public void iMustSeeMessage(String message) {
         Assert.assertEquals(driver.findElement(By.className("App")).getText(), message);
     }
 }

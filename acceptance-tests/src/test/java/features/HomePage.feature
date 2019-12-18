@@ -1,5 +1,5 @@
 Feature: HomePage
 
-  Scenario: I Should see hello world message on home page
-    Given I open home page
-    Then I should see "Hello, world!" message
+  Scenario: I should see a hello world message on the home page
+    Given I open the home page
+    Then I MUST see a message "Hello, world!"
