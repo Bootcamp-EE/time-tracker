@@ -5,7 +5,7 @@ all:test
 .PHONY: test
 ## Runs the unit tests.
 test:
-	./gradlew test
+	./gradlew --stacktrace test
 
 -include ../.makehelp/include/makehelp/Help.mk
 
