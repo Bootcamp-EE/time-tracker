@@ -22,8 +22,8 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    compile 'org.junit.jupiter:junit-jupiter:5.6.0-M1'
-    compile 'io.cucumber:cucumber-junit:5.0.0-RC2'
-    compile 'io.cucumber:cucumber-java:5.0.0-RC2'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testCompile 'org.junit.jupiter:junit-jupiter:5.6.0-M1'
+    testCompile 'io.cucumber:cucumber-junit:5.0.0-RC2'
+    testCompile 'io.cucumber:cucumber-java:5.0.0-RC2'
 }
