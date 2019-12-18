@@ -1,18 +1,18 @@
 package com.timetracker;
 
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 
 import java.util.Map;
 
 import static java.lang.Runtime.getRuntime;
 import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StepDefs {
     private static final String CHROME_DRIVER_PATH = "src/test/resources/chrome-drivers/";
@@ -43,8 +43,8 @@ public class StepDefs {
         driver.get("http://localhost:3000");
     }
 
-    @Then("I MUST see a message \"([^\"]*)\"")
+    @Then("I MUST see a message {string}")
     public void iMustSeeMessage(String message) {
-        Assert.assertEquals(driver.findElement(By.className("App")).getText(), message);
+        assertEquals(driver.findElement(By.className("App")).getText(), message);
     }
 }
