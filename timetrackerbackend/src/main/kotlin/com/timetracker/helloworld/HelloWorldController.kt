@@ -12,7 +12,7 @@ class HelloWorldController {
     @Autowired
     lateinit var messageService: MessageService
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     fun index(): Message {
         return messageService.getMessage()
     }
