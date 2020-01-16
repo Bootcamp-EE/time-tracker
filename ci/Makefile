@@ -1,7 +1,7 @@
 .PHONY: all
 ## Runs Jenkins via Docker.
 all:
-	docker-compose up
+	docker-compose up --build
 
 -include ../.makehelp/include/makehelp/Help.mk
 

@@ -17,4 +17,4 @@ export jenkins_path="/tmp/jenkins"
 cd ci
 sudo chmod +rwx docker-install.sh
 sh docker-install.sh
-sudo docker-compose up -d
+sudo docker-compose up -d --build
